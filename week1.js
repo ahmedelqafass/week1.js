@@ -57,8 +57,7 @@ console.log(maps);
 //8
 let Divisible = 15;
 let result1 = (Divisible % 3 === 0 && Divisible % 5 === 0)
-  ? "Divisible by both"
-  : "Not divisible by both";
+  ? "Divisible by both" : "Not divisible by both";
 console.log(result1);
 //9
 let squareNum = (num) => {
@@ -76,15 +75,7 @@ function sum(...numbers) {
   return numbers.reduce((total, num) => total + num, 0);
 }
 console.log(sum(1, 2, 3, 4, 5));
-//12
-function getMessage() {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve("Success");
-    }, 3000);
-  });
-}
-getMessage().then(message => console.log(message));
+
 //13
 let bigElement= (arr) => Math.max(...arr);
 console.log(bigElement([1,3,7,2,4]));
