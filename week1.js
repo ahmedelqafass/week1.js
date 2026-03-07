@@ -1,25 +1,25 @@
 //1
-let num ="123"
-console.log(Number("123")+7);      
+let num = "123";
+console.log(Number("123") + 7);
 //2
 let fvalue = 0;
 let result = !fvalue ? "invalid" : "valid";
-console.log(result); 
+console.log(result);
 //3
-for (let m=0; m <= 10; m++){
-if(m%2 === 0){
+for (let m = 0; m <= 10; m++) {
+  if (m % 2 === 0) {
     continue;
-}
-console.log(m);
+  }
+  console.log(m);
 }
 //4
 let arr1 = [1, 2, 3, 4, 5];
-let evenArr1 = arr1.filter(num=> num % 2 === 0);
-console.log(evenArr1); 
+let evenArr1 = arr1.filter((num) => num % 2 === 0);
+console.log(evenArr1);
 //5
 let arr11 = [1, 2, 3];
 let arr12 = [4, 5, 6];
-let margeArray = [...arr11,...arr12];
+let margeArray = [...arr11, ...arr12];
 console.log(margeArray);
 //6
 let dayNumber = 2;
@@ -52,37 +52,83 @@ switch (dayNumber) {
 console.log(dayName);
 //7
 let arr = ["a", "ab", "abc"];
-let maps = arr.map(str => str.length);
+let maps = arr.map((str) => str.length);
 console.log(maps);
 //8
 let Divisible = 15;
-let result1 = (Divisible % 3 === 0 && Divisible % 5 === 0)
-  ? "Divisible by both" : "Not divisible by both";
+let result1 =
+  Divisible % 3 === 0 && Divisible % 5 === 0
+    ? "Divisible by both"
+    : "not divisible by both";
 console.log(result1);
 //9
 let squareNum = (num) => {
   return num * num;
 };
-console.log(squareNum(5)); 
+console.log(squareNum(5));
 //10
-let User ={name : 'John' , age: 25}
-let formatUser = ({name , age}) => {
-  return `${name} is ${age} years old `  
-}
-console.log(formatUser(User))
+let User = { name: "John", age: 25 };
+let formatUser = ({ name, age }) => {
+  return `${name} is ${age} years old `;
+};
+console.log(formatUser(User));
 //11
 function sum(...numbers) {
   return numbers.reduce((total, num) => total + num, 0);
 }
 console.log(sum(1, 2, 3, 4, 5));
-
+//12
+function success() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Success");
+    }, 3000);
+  });
+}
+success().then((message) => {
+  console.log(message);
+});
 //13
-let bigElement= (arr) => Math.max(...arr);
-console.log(bigElement([1,3,7,2,4]));
-//14 
-let getKeys =(obj) => Object.keys(obj);
-console.log(getKeys({name : 'john', age: 30 }))
-//15 
+let bigElement = (arr) => Math.max(...arr);
+console.log(bigElement([1, 3, 7, 2, 4]));
+//14
+let getKeys = (obj) => Object.keys(obj);
+console.log(getKeys({ name: "john", age: 30 }));
+//15
 let splitString = (str) => str.split(" ");
 console.log(splitString("The quick brown fox"));
+//Bonus
+function creatCounter(startValue) {
+    let count = startValue;
+    function add() {
+        count += 1;
+        return count;
+    }
+    function subtract() {
+        count -= 1;
+        return count;
+    }
+    function restart() {
+        count = startValue;
+        return count;
+    }
+    return {
+        increment: add,
+        decrement: subtract,
+        reset: restart
+    };
+}
+//counter
+const counter = creatCounter(5);
+console.log(counter.increment()); 
+console.log(counter.reset());   
+console.log(counter.decrement());
+//counter2
+const counter2 = creatCounter(0);
+console.log(counter2.increment()); 
+console.log(counter2.increment()); 
+console.log(counter2.decrement()); 
+console.log(counter2.reset());    
+console.log(counter2.reset());      
+
 
